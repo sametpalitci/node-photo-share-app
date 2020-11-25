@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <!-- Modals -->
+    <div class="modal fade " id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Kayıt Ol</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body registerForm ">
+                    <form action="/register" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">Kullanıcı Adı*</label>
+                                <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Kullanıcı Adı">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">E-mail*</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="E-mail">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="exampleInputPassword1">Parola*</label>
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Parola">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="exampleInputPassword1">Parola Tekrar*</label>
+                                <input type="password" name="passwordrepeat" class="form-control"
+                                    id="exampleInputPassword1" placeholder="Parola Tekrar">
+                            </div>
+                            <div class="form-group col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        <a href="#">Gizlilik sözleşmesini</a> okudum ve kabul ediyorum.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Kaydol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if(usersData){ %>
+    <div class="modal fade " id="acountModal" tabindex="-1" role="dialog" aria-labelledby="acountModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hesabım</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body registerForm">
+                    <form action="/register" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">Kullanıcı Adı*</label>
+                                <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Kullanıcı Adı" disabled
+                                    value="<%-usersData.username%>">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">E-mail*</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="E-mail" disabled
+                                    value="<%-usersData.email%>">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">Sorulan Soru Sayısı</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="E-mail" disabled value="1">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">Puan</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="E-mail" disabled value="5">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="/logout" class="btn btn-danger">Çıkış</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog px-5" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giriş Yap</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body registerForm">
+                    <form action="/login" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail1">Kullanıcı adı veya e-posta</label>
+                                <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Kullanıcı adı veya e-posta">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="exampleInputPassword1">Parola</label>
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Parola">
+                            </div>
+                            <div class="form-group col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">Beni hatırla</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Giriş Yap</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modals -->
+    <!-- Header -->
+    <div class="headerMain">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-lg-12 headerMainInclusive py-4 d-flex justify-content-between align-items-center">
+                    <div class="mainHeaderLogo">
+                        <img class="img-fluit  d-none d-lg-block d-md-block" src="./img/logoDarkBlue.png" alt="">
+                        <img class="img-fluit  d-block  d-lg-none d-xs-block d-sm-block d-md-none"
+                            src="./img/logoDarkBlueSmall.png" alt="">
+                    </div>
+                    <div class="mainHeaderFirstLinks d-flex justify-content-between align-items-center">
+
+                        <a href="#" class="text-decoration-none">Ana Sayfa</a>
+                    </div>
+                    <div class="">
+                        <div class="input-group mainHeaderInputSearch ">
+                            <input type="text" class="form-control " placeholder="Aramak istediğinizi yazın"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" d-flex justify-content-between align-items-center mainHeaderRight">
+                        <% if(usersData){ %>
+                        <a href="#" class="text-decoration-none text-white  btn btn-warning px-3 mr-2 py-2">
+                            <span href="#" class="text-decoration-none d-flex justify-content-center align-items-center"
+                                data-toggle="modal" data-target="#registerModal">
+                                <ion-icon name="bookmarks" class="mr-1"></ion-icon>
+                                Sorularım
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none text-white  btn btn-danger px-3 py-2">
+                            <span href="#" class="text-decoration-none d-flex justify-content-center align-items-center"
+                                data-toggle="modal" data-target="#acountModal">
+                                <ion-icon name="person" class="mr-1"></ion-icon>
+                                Hesabım
+                            </span>
+                        </a>
+                        <% } else { %>
+                        <a href="#" class="text-decoration-none  mr-4">
+                            <span href="#" class="text-decoration-none d-flex justify-content-center align-items-center"
+                                data-toggle="modal" data-target="#loginModal">
+                                <ion-icon name="person" class="mr-1"></ion-icon>
+                                Giriş Yap
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none  minHeaderRegister  px-3 py-2">
+                            <span href="#" class="text-decoration-none d-flex justify-content-center align-items-center"
+                                data-toggle="modal" data-target="#registerModal">
+                                <ion-icon name="person-add" class="mr-1"></ion-icon>
+                                Kayıt Ol
+                            </span>
+                        </a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <!-- Content -->
+    <div class="container mt-5 contextMTMobile">
+        <div class="row">
+            <div class="col-12 col-lg-3 col-md-3">
+                <div class="positionChange ">
+                    <div class="contextLeftBar p-4 mb-2  d-flex justify-content-center flex-column">
+                        <h5 class="text-center m-0">Dersler <button id="classListButton" class="float-right">
+                                <ion-icon name="menu-outline"></ion-icon>
+                            </button></h5>
+                        <% lessonData.forEach((item,index)=>{ %>
+                        <a href="/category/<%-item.title%>" class="contetLeftBarLink mt-1">
+                            <ion-icon class="mr-2" name="ellipse" style="color: <%-item.color%>;"></ion-icon>
+                            <%-item.title%>
+                        </a>
+                        <% }) %>
+
+                    </div>
+                    <% if(!usersData){ %>
+                    <div class="contextLeftBar p-3  mb-2 d-none d-lg-block d-md-block">
+                        <div class="mainContextRight m-0 ">
+                            <a href="#" data-toggle="modal" data-target="#loginModal"
+                                class="text-decoration-none d-flex justify-content-center align-items-center">
+                                <ion-icon name="person" class="mr-1"></ion-icon>
+                                Giriş Yap
+                            </a>
+                        </div>
+                        <p class="text-center p-0 my-3 ">veya</p>
+                        <div class="mainContextRight minHeaderRegister mt-0 px-3 py-2">
+                            <a href="#" class="text-decoration-none d-flex justify-content-center align-items-center"
+                                data-toggle="modal" data-target="#registerModal">
+                                <ion-icon name="person-add" class="mr-1"></ion-icon>
+                                Kayıt Ol
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+                    <a href="#" class="text-decoration-none d-none d-lg-block d-md-block">
+                        <img src="./img/playstore.png" class="img-fluit googlePlayLogo" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-md-6">
+                <% if(usersData){ %>
+                <div class="card-upload d-flex justify-content-between flex-column p-3 mb-2">
+                    <form action="/addQuestion" method="POST" enctype="multipart/form-data">
+                        <div>
+                            <textarea placeholder="Sorunun Açıklaması (İsteğe Bağlı)" name="description"
+                                id="imageSentDescription" class="form-control"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row mt-2">
+                            <div class="d-flex justify-content-between">
+                                <button class="imageAddButton">
+                                    <input type="file" name="uploaded_file" style="width:200px;" required /> <br>
+                                </button>
+                                <div class="imageSelectForm ml-2">
+                                    <select class="custom-select" name="lessonId" id="inputGroupSelect01" required>
+                                        <% lessonData.forEach((item,index)=>{ %>
+                                        <option value="<%-item._id%>"><%-item.title%></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="author" value="<%- usersData.id %>">
+                            </div>
+                            <button type="submit" class="btn imageSentButton">Gönder<ion-icon class="ml-2" name="send">
+                                </ion-icon>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <% } if(questionData){ questionData.forEach((item,index)=>{%>
+                <div class="card-deck mb-2">
+                    <div class="card questionCard">
+                        <img src="<%- item.image %>" class="card-img-top questionImage" alt="...">
+                        <div class="card-body">
+                            <a href="#" class="text-decoration-none">
+                                <ion-icon class="mr-1" name="ellipse" style="color: <%- item.lessonObject.color%>;">
+                                </ion-icon> <%- item.lessonObject.title%>
+                            </a>
+                            <p class="card-text p-0 m-0"><%-item.description %></p>
+
+                            <p class="p-0 m-0">@<%- item.authorObject.username%></p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted p-0 m-0"><%- item.created_at%></small>
+                        </div>
+                    </div>
+                </div>
+
+                <%})} %>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3 ">
+                <div class="positionChange">
+                    <img class="img-fluit adsThumb" src="./img/thumb.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="./js/jquery-3.5.1.slim.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

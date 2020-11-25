@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+body {
+    background-color: #ecf1f8;
+}
+
+.headerMain {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.mainHeaderLogo {
+    width: 200px;
+}
+
+.mainHeaderLogo img {
+    width: 200px;
+}
+
+.mainHeaderFirstLinks a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2a363b;
+    font-size: 15px;
+}
+
+.mainHeaderInputSearch input {
+    background-color: #ecf1f8;
+    border: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #2a363b;
+    font-size: 14px;
+    outline: none;
+}
+
+.mainHeaderInputSearch span {
+    background-color: #ecf1f8;
+    border: 0px;
+}
+
+.mainHeaderRight a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2a363b;
+    font-size: 15px;
+}
+
+.mainHeaderRight ion-icon {
+    font-size: 20px;
+}
+
+.minHeaderRegister {
+    background-color: #2ecc71;
+    border-radius: 10px;
+}
+.minHeaderRegister:active {
+    background-color: #27aa5d;
+}
+
+.minHeaderRegister span {
+    color: #fff !important;
+}
+.minHeaderRegister a {
+    color: #fff !important;
+}
+
+.contextLeftBar {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.contextLeftBar h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2a363b;
+    font-size: 25px;
+}
+
+.contextLeftBar a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #2a363b;
+    font-size: 14px;
+}
+
+.contextLeftBar p {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #2a363b;
+    font-size: 14px;
+}
+
+.adsThumb {
+    width: 100%;
+    height: auto;
+}
+
+.questionImage {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.questionCard {
+    border-radius: 10px;
+    border: 0px !important;
+}
+
+.positionChange {
+    position: sticky;
+    top: 50px;
+}
+
+#classListButton {
+    display: none;
+}
+
+.contetLeftBarLink {
+    display: block;
+}
+
+.card-upload {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.card-upload textarea {
+    background-color: #ecf1f8;
+    color: #404044;
+    height: 40px;
+    transition: 1s;
+}
+
+.imageAddButton {
+    background-color: #ecf1f8;
+    border-radius: 10px;
+    border: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    box-shadow: none;
+}
+
+.imageAddButton ion-icon {
+    font-size: 30px;
+    color: #404044;
+}
+
+.imageSentButton {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: #3498db;
+    color: #fff;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.imageSentButton:hover {
+    background-color: #3498db;
+    color: #fff;
+    width: 150px;
+}
+
+.registerForm input {
+    background-color: #ecf1f8;
+    border: 0px;
+}
+
+.registerForm label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #404044;
+    font-size: 14px;
+}
+
+.imageSelectForm select {
+    border-radius: 10px;
+    width: 130px;
+    border: 0px !important;
+    background-color: #ecf1f8;
+}
+.googlePlayLogo {
+    width: 170px;
+}
+@media(max-width:992px) {
+    .contextLeftBar h5 {
+        font-size: 15px;
+    }
+    .contextLeftBar a {
+        font-size: 10px;
+    }
+    .contextLeftBar p {
+        font-size: 12px;
+    }
+    .mainHeaderLogo {
+        width: 100px;
+    }
+    .mainHeaderLogo img {
+        width: 100px;
+    }
+    .minHeaderRegister {
+        padding: 10px !important;
+    }
+    .mainHeaderInputSearch {
+        width: 200px;
+    }
+    .mainHeaderFirstLinks a {
+        margin-right: 10px !important;
+    }
+    .mainHeaderRight a {
+        font-size: 10px;
+    }
+    .mainHeaderRight ion-icon {
+        font-size: 15px;
+    }
+    .mainContextRight a {
+        font-size: 10px;
+    }
+    .mainContextRight ion-icon {
+        font-size: 15px;
+    }
+    .mainHeaderFirstLinks a {
+        font-size: 10px;
+    }
+    .mainHeaderInputSearch input {
+        font-size: 10px;
+    }
+    .imageSelectForm select {
+        width: 100px;
+    }
+}
+
+@media (max-width:768px) {
+    #classListButton {
+        background-color: #fff;
+        border: 0px !important;
+        padding: 0px;
+        margin: 0px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        outline: none;
+    }
+    #classListButton ion-icon {
+        color: #2a363b;
+    }
+    .mainHeaderLogo img {
+        width: 50px;
+    }
+    .mainHeaderInputSearch {
+        width: 150px !important;
+    }
+    .imageSelectForm select {
+        width: 120px;
+    }
+}
+
+@media(max-width:767px) {
+    .positionChange {
+        position: static;
+    }
+    .contextMTMobile {
+        margin-top: 10px !important;
+    }
+    .contextLeftBar {
+        padding: .5rem!important;
+    }
+    .contextLeftBar h5 {
+        text-align: start !important;
+        font-size: 10px;
+    }
+    .contetLeftBarLink {
+        display: none;
+    }
+}
+
+@media (max-width:559px) {
+    .imageAddButton {
+        height: 30px !important;
+        font-size: 10px;
+    }
+    .imageAddButton ion-icon {
+        font-size: 20px;
+    }
+    .imageSentButton {
+        height: 30px !important;
+        width: 100px;
+        font-size: 15px;
+    }
+    .imageSelectForm select {
+        height: 30px;
+        padding: 0px 10px;
+    }
+    .card-upload textarea {
+        height: 30px;
+        padding: 0px 10px;
+    }
+    .mainHeaderLogo {
+        width: 30px;
+    }
+    .mainHeaderLogo img {
+        width: 30px;
+    }
+    .mainHeaderInputSearch {
+        width: 100px !important;
+    }
+    .mainHeaderInputSearch input {
+        height: 25px;
+    }
+    .mainHeaderInputSearch span {
+        height: 25px;
+    }
+    .mainHeaderFirstLinks a {
+        margin-right: 7px !important;
+    }
+    .mainHeaderRight {
+        padding: 5px 10px !important;
+    }
+    .mainHeaderRight {
+        margin-right: 5px !important;
+    }
+    .mainHeaderRight a {
+        font-size: 7px;
+    }
+    .mainHeaderRight ion-icon {
+        display: none;
+    }
+    .mainHeaderFirstLinks a {
+        font-size: 7px;
+    }
+    .mainHeaderInputSearch input {
+        font-size: 7px;
+    }
+}
+
+@media(max-width:370px) {
+    .mainHeaderInputSearch {
+        width: 80px !important;
+    }
+    .mainHeaderInputSearch input {
+        height: 20px;
+    }
+    .mainHeaderInputSearch span {
+        height: 20px;
+    }
+    .mainHeaderFirstLinks {
+        display: none !important;
+    }
+    .imageSelectForm select {
+        width: 100px;
+    }
+}
